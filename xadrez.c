@@ -1,54 +1,39 @@
 #include <stdio.h>  
 
-// Definindo constantes para as movimentações  
+// Definindo constantes para os movimentos  
 #define BISHOP_MOVE 5  
 #define ROOK_MOVE 5  
 #define QUEEN_MOVE 8  
+#define KNIGHT_MOVE 1  
 
 int main() {  
-    // Movimentação do Bispo: 5 casas na diagonal superior direita  
-    int i;  
-
-    // Usando loop for para o movimento do bispo  
+    // Movimentação do bispo usando loops aninhados  
     printf("Movimento do Bispo:\n");  
-    for (i = 0; i < BISHOP_MOVE; i++) {  
-        printf("Cima, Direita\n");  
+    for (int i = 0; i < BISHOP_MOVE; i++) {  
+        for (int j = 0; j < 1; j++) { // Loop aninhado para simular a diagonal  
+            printf("Cima, Direita\n");  
+        }  
     }  
 
-    // Movimentação da Torre: 5 casas para a direita  
+    // Movimentação da torre usando loop for  
     printf("\nMovimento da Torre:\n");  
-    for (i = 0; i < ROOK_MOVE; i++) {  
+    for (int i = 0; i < ROOK_MOVE; i++) {  
         printf("Direita\n");  
     }  
 
-    // Movimentação da Rainha: 8 casas para a esquerda  
+    // Movimentação da rainha usando loop while  
     printf("\nMovimento da Rainha:\n");  
-    for (i = 0; i < QUEEN_MOVE; i++) {  
+    int queenMoves = 0;  
+    while (queenMoves < QUEEN_MOVE) {  
         printf("Esquerda\n");  
+        queenMoves++;  
     }  
 
-    // Usando loop while para o movimento do bispo  
-    printf("\nMovimento do Bispo com while:\n");  
-    i = 0;  
-    while (i < BISHOP_MOVE) {  
+    // Movimentação do cavalo usando loop for  
+    printf("\nMovimento do Cavalo:\n");  
+    for (int i = 0; i < KNIGHT_MOVE; i++) {  
         printf("Cima, Direita\n");  
-        i++;  
-    }  
-
-    // Usando loop do-while para o movimento da torre  
-    printf("\nMovimento da Torre com do-while:\n");  
-    i = 0;  
-    do {  
-        printf("Direita\n");  
-        i++;  
-    } while (i < ROOK_MOVE);  
-
-    // Usando loop while para a rainha  
-    printf("\nMovimento da Rainha com while:\n");  
-    i = 0;  
-    while (i < QUEEN_MOVE) {  
-        printf("Esquerda\n");  
-        i++;  
+        printf("Cima, Direita\n"); // Simulando o movimento em L  
     }  
 
     return 0;  
